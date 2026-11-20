@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: apex-studio
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: STUDIO_TIMEZONE
+        value: Europe/Istanbul
+      - key: FREELLMAPI_BASE_URL
+        sync: false
+      - key: FREELLMAPI_API_KEY
+        sync: false
+      - key: FREELLMAPI_MODEL
+        value: auto
+      - key: NINEROUTER_BASE_URL
+        sync: false
+      - key: NINEROUTER_API_KEY
+        sync: false
+      - key: NINEROUTER_MODEL
+        value: auto
+      - key: CREATOMATE_API_KEY
+        sync: false
+      - key: CREATOMATE_TEMPLATE_ID
+        sync: false
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: PEXELS_API_KEY
+        sync: false
